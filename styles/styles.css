@@ -1,0 +1,141 @@
+/* 1. Fuentes e Importaciones */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Cratense';
+    src: url('../assets/Cratense.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Estilos Globales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: 'Cratense', serif;
+}
+
+/* 3. Personalización del Navbar (Tu encabezado) */
+.navbar {
+    background-color: #f9e2c5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #000 !important;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #f4511e !important;
+}
+
+.nav-link.active {
+    color: #f4511e !important;
+    font-weight: 700;
+}
+
+/* 4. Tarjetas de Productos (Cards) */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #f4511e;
+    font-weight: bold;
+}
+
+/* 5. Botones y Formularios */
+.btn-primary-febite {
+    background-color: #f4511e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-primary-febite:hover {
+    background-color: #d84315;
+    color: white;
+}
+
+/* --- ESTILOS DEL FOOTER AVANZADO --- */
+.footer-febite {
+    background-color: #0b1a30;
+    color: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    margin-top: auto;
+}
+
+/* Títulos de las columnas del footer */
+.footer-febite h5 {
+    font-family: 'Cratense', serif;
+    color: #f9e2c5;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+/* Enlaces del footer */
+.footer-febite ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-febite a {
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-febite a:hover {
+    color: #f4511e;
+    padding-left: 5px;
+}
+
+/* Iconos de redes sociales */
+.social-icon {
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #8899a6;
+}
