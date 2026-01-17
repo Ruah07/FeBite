@@ -1,0 +1,165 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as bp;
+
+.section-head {
+  margin-bottom: 1rem;
+
+  &--row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+.page-hero {
+  @include m.hero-surface(18px);
+  padding: clamp(1.25rem, 2vw, 2rem);
+
+  >.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.page-hero .display-5 {
+  font-size: clamp(1.9rem, 6.5vw, 3rem);
+  line-height: 1.05;
+}
+
+.section-head .display-6 {
+  font-size: clamp(1.65rem, 5.5vw, 2.25rem);
+  line-height: 1.1;
+}
+
+@include bp.down(bp.$bp-sm) {
+  .page-hero {
+    padding: 1.25rem 1.25rem;
+  }
+}
+
+@include bp.up(bp.$bp-lg) {
+  .page-hero {
+    padding: clamp(2rem, 2.5vw, 2.75rem);
+  }
+}
+
+.page-hero__media {
+  border-radius: 18px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.page-hero+section {
+  padding-top: 3rem;
+}
+
+@include bp.up(bp.$bp-lg) {
+  .page-hero+section {
+    padding-top: 4rem;
+  }
+}
+
+.mini-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 520px;
+
+  @include bp.up(bp.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: 0.75rem 0.85rem;
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  &__value {
+    display: block;
+    font-weight: 800;
+    color: #222;
+  }
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  &__num {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    color: #fff;
+    background: v.$brand;
+    margin-bottom: 0.9rem;
+  }
+}
+
+.faq {
+  display: grid;
+  gap: 0.75rem;
+
+  &__item {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  }
+
+  &__q {
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  &__a {
+    margin: 0.75rem 0 0;
+  }
+}
+
+.cta-febite {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+.menu-section {
+  scroll-margin-top: 110px;
+
+  &--dogs {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.06);
+      margin: 0 0 1.5rem;
+    }
+  }
+}

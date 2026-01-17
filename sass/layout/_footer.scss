@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.footer-febite {
+    background-color: v.$footer-bg;
+    color: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    margin-top: auto;
+
+    h5 {
+        font-family: 'Cratense', serif;
+        color: v.$footer-title;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: v.$footer-link;
+        text-decoration: none;
+        @include m.transition(all 0.3s ease);
+
+        &:hover {
+            color: v.$brand;
+            padding-left: 5px;
+        }
+    }
+}
+
+.social-icon {
+    filter: brightness(0) invert(1);
+    @include m.transition(transform 0.3s);
+    opacity: 0.8;
+
+    &:hover {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: v.$footer-muted;
+}

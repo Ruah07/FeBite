@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.card {
+  border: none;
+  background-color: #fff;
+  border-radius: v.$radius-card;
+  overflow: hidden;
+  @include m.transition(transform 0.3s ease, box-shadow 0.3s ease);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: v.$shadow-card;
+  }
+}
+
+.card--featured {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: v.$radius-card;
+    border: 2px solid rgba(244, 81, 30, 0.25);
+    pointer-events: none;
+  }
+}
+
+.card-img-top {
+  height: clamp(180px, 28vw, 250px);
+  object-fit: contain;
+  background-color: v.$footer-title;
+}
+
+.card-title {
+  color: v.$brand;
+  font-weight: 800;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+
+  ul {
+    padding-left: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+}

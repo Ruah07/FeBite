@@ -1,0 +1,271 @@
+<!-- pages/pedidos.html (PRO) -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeBite | Pedidos</title>
+
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-float navbar-light" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html" aria-label="Ir al inicio">
+                    <img src="../assets/LogoFB.png" alt="Logo de FeBite" width="60" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./pedidos.html">Pedidos</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="./reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO / ENCABEZADO -->
+        <section class="container py-5 page-hero" aria-labelledby="pedidos-title">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-7">
+                    <h1 id="pedidos-title" class="display-5 mb-2">Haz tu pedido ahora</h1>
+                    <p class="lead text-muted mb-4">
+                        Elige tu antojo y pídelo por WhatsApp. Te confirmamos disponibilidad, tiempo estimado y forma de
+                        pago.
+                    </p>
+
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a class="btn btn-whatsapp" href="https://wa.me/3204302300" target="_blank" rel="noopener">
+                            Pedir por WhatsApp
+                        </a>
+                        <a class="btn btn--ghost" href="../index.html#menu">Ver menú</a>
+                    </div>
+
+                    <div class="mini-info mt-4">
+                        <div class="mini-info__item">
+                            <span class="mini-info__label">Tiempo promedio</span>
+                            <span class="mini-info__value">25–40 min</span>
+                        </div>
+                        <div class="mini-info__item">
+                            <span class="mini-info__label">Horario</span>
+                            <span class="mini-info__value">Mar–Dom</span>
+                        </div>
+                        <div class="mini-info__item">
+                            <span class="mini-info__label">Pago</span>
+                            <span class="mini-info__value">Efectivo / Transferencia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="page-hero__media">
+                        <img src="../assets/delivery.png" alt="Hamburguesa doble destacada" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASOS -->
+        <section class="container pb-5" aria-labelledby="pasos-title">
+            <header class="section-head">
+                <h2 id="pasos-title" class="display-6 mb-1">¿Cómo funciona?</h2>
+                <p class="text-muted mb-0">En 3 pasos rápidos.</p>
+            </header>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-1" data-aos="fade-up">
+                <div class="col">
+                    <article class="step-card h-100">
+                        <div class="step-card__num">1</div>
+                        <h3 class="h5 mb-2">Elige tu producto</h3>
+                        <p class="text-muted mb-0">Hamburguesas o perros calientes. Puedes pedir extras.</p>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="step-card h-100">
+                        <div class="step-card__num">2</div>
+                        <h3 class="h5 mb-2">Escríbenos por WhatsApp</h3>
+                        <p class="text-muted mb-0">Te respondemos con el total y el tiempo estimado.</p>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="step-card h-100">
+                        <div class="step-card__num">3</div>
+                        <h3 class="h5 mb-2">Recibe y disfruta</h3>
+                        <p class="text-muted mb-0">Entrega a domicilio o para recoger (según zona).</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ RÁPIDO -->
+        <section class="container pb-5" aria-labelledby="menu-rapido-title">
+            <header class="section-head section-head--row">
+                <div>
+                    <h2 id="menu-rapido-title" class="display-6 mb-1">Menú rápido</h2>
+                    <p class="text-muted mb-0">Opciones más pedidas.</p>
+                </div>
+
+                <a class="link-febite" href="https://wa.me/3204302300" target="_blank" rel="noopener">
+                    Pedir ahora <span class="link-febite__arrow">→</span>
+                </a>
+            </header>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2" data-aos="zoom-out">
+                <div class="col">
+                    <article class="card h-100 shadow-sm">
+                        <img src="../assets/Sencilla.png" class="card-img-top" alt="Hamburguesa sencilla"
+                            loading="lazy" />
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Hamburguesa Sencilla</h3>
+                            <p class="card-text">Clásica, equilibrada y deliciosa.</p>
+                            <a class="btn btn-primary-febite mt-auto" href="https://wa.me/3204302300" target="_blank"
+                                rel="noopener">Pedir</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm card--featured">
+                        <img src="../assets/Doble.png" class="card-img-top" alt="Hamburguesa doble" loading="lazy" />
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Hamburguesa Doble</h3>
+                            <p class="card-text">Doble carne, doble antojo.</p>
+                            <a class="btn btn-primary-febite mt-auto" href="https://wa.me/3204302300" target="_blank"
+                                rel="noopener">Pedir</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm">
+                        <img src="../assets/Perro%20especial.png" class="card-img-top" alt="Perro caliente especial"
+                            loading="lazy" />
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Perro Especial</h3>
+                            <p class="card-text">Toppings de la casa y salsas artesanales.</p>
+                            <a class="btn btn-primary-febite mt-auto" href="https://wa.me/3204302300" target="_blank"
+                                rel="noopener">Pedir</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container pb-5" aria-labelledby="faq-title">
+            <header class="section-head">
+                <h2 id="faq-title" class="display-6 mb-1">Preguntas frecuentes</h2>
+                <p class="text-muted mb-0">Respuestas rápidas antes de pedir.</p>
+            </header>
+
+            <div class="faq mt-3" data-aos="fade-up">
+                <details class="faq__item">
+                    <summary class="faq__q">¿Qué datos debo enviar por WhatsApp?</summary>
+                    <p class="faq__a text-muted">Producto, cantidad, dirección (si es domicilio) y método de pago.</p>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Tienen combos o promociones?</summary>
+                    <p class="faq__a text-muted">Sí. Pregunta por las promos vigentes del día o la semana.</p>
+                </details>
+
+                <details class="faq__item">
+                    <summary class="faq__q">¿Puedo quitar ingredientes?</summary>
+                    <p class="faq__a text-muted">Claro. Cuéntanos tus preferencias y lo ajustamos.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="container mb-5">
+            <div class="cta-febite p-4 p-md-5 text-center" data-aos="zoom-in">
+                <h2 class="display-6 mb-2">¿Listo para tu próximo antojo?</h2>
+                <p class="text-muted mb-4">Haz tu pedido en minutos y te lo llevamos.</p>
+                <a class="btn btn-whatsapp" href="https://wa.me/3204302300" target="_blank" rel="noopener">Pedir por
+                    WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-febite">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="../assets/LogoFB.png" alt="Logo de FeBite" width="50" />
+                    </div>
+                    <p class="small">
+                        Tu destino para deliciosos bocados y momentos inolvidables. Calidad artesanal en cada mordida.
+                    </p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Explora</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="./pedidos.html">Nuestros Pedidos</a></li>
+                        <li><a href="./reservas.html">Reservar Mesa</a></li>
+                        <li><a href="./nosotros.html">Nuestra Historia</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <p class="small mb-3">Entérate de nuestras promociones:</p>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="https://www.instagram.com/febite_co" target="_blank" rel="noopener">
+                            <img src="../assets/instagram.png" alt="Instagram" width="28" class="social-icon" />
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <img src="../assets/facebook.png" alt="Facebook" width="28" class="social-icon" />
+                        </a>
+                        <a href="https://wa.me/3204302300" target="_blank" rel="noopener">
+                            <img src="../assets/whatsapp.png" alt="WhatsApp" width="28" class="social-icon" />
+                        </a>
+                    </div>
+                    <p class="small mb-0 text-white-50">Desarrollado por RUAH Brands</p>
+                </div>
+            </div>
+
+            <div class="row copyright text-center">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2024 FeBite. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 650, offset: 80 });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

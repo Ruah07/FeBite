@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: v.$bg-page;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+    font-family: "Cratense", serif;
+}
+
+a.link-febite {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+
+    color: v.$brand;
+    text-decoration: none;
+    font-weight: 800;
+
+    padding: .55rem .85rem;
+    border-radius: 999px;
+
+    background: rgba(244, 81, 30, .10);
+    border: 1px solid rgba(244, 81, 30, .18);
+
+    @include m.transition(transform .18s ease, background-color .18s ease, box-shadow .18s ease);
+
+    &:hover {
+        transform: translateY(-1px);
+        background: rgba(244, 81, 30, .16);
+        box-shadow: 0 10px 20px rgba(244, 81, 30, .14);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba(244, 81, 30, .35);
+        outline-offset: 3px;
+    }
+}

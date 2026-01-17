@@ -1,0 +1,16 @@
+/* Acepta 1 o varias transiciones */
+@mixin transition($values...) {
+    transition: $values;
+}
+
+@mixin hero-surface($radius: 18px) {
+    border-radius: $radius;
+    overflow: visible;
+
+    background:
+        radial-gradient(900px 320px at 20% 0%, rgba(244, 81, 30, 0.18), transparent 55%),
+        radial-gradient(700px 320px at 85% 20%, rgba(249, 226, 197, 0.85), transparent 60%),
+        linear-gradient(180deg, #ffffff, #f8f9fa);
+
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}

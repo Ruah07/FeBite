@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as bp;
+
+.hero-febite {
+  position: relative;
+  @include m.hero-surface(18px);
+}
+
+.hero-febite__title {
+  font-family: "Cratense", serif;
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-febite__lead {
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  color: #333;
+  max-width: 60ch;
+}
+
+.hero-febite__actions {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-febite__bullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #333;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: v.$brand;
+      box-shadow: 0 8px 18px rgba(244, 81, 30, 0.25);
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.hero-febite__media {
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(249, 226, 197, 0.65), transparent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.10);
+}
+
+.hero-febite__img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+@include bp.up(bp.$bp-lg) {
+  .hero-febite__img {
+    max-height: 420px;
+  }
+}

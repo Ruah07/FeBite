@@ -1,0 +1,105 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as bp;
+
+
+/* Navbar flotante */
+.navbar.navbar-float {
+    background: transparent;
+    /* el fondo lo tendrá el contenedor interno */
+    box-shadow: none;
+    padding: 1rem 0;
+    /* aire arriba/abajo */
+}
+
+.navbar.navbar-float>.container,
+.navbar.navbar-float>.container-fluid {
+    width: min(1320px, calc(100% - 2rem));
+    /* MÁS GRANDE */
+    margin-inline: auto;
+    padding: 0.75rem 1rem;
+
+    background: rgba(249, 226, 197, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Marca */
+.navbar.navbar-float .navbar-brand {
+    font-size: 1.6rem;
+    color: v.$text-dark !important;
+}
+
+/* Links */
+.navbar.navbar-float .nav-link {
+    color: v.$text-nav !important;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.5rem 0.85rem;
+    @include m.transition(background-color 0.2s ease, color 0.2s ease, transform 0.2s ease);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.55);
+        color: v.$brand !important;
+        transform: translateY(-1px);
+    }
+
+    &.active {
+        background: rgba(255, 255, 255, 0.75);
+        color: v.$brand !important;
+        font-weight: 800;
+    }
+}
+
+/* Toggler (mobile) */
+.navbar.navbar-float .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+/* Cuando el menú colapsa, que se vea ordenado */
+@media (max-width: 991.98px) {
+    .navbar.navbar-float .navbar-collapse {
+        margin-top: 0.75rem;
+    }
+
+    .navbar.navbar-float .navbar-nav {
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 16px;
+        padding: 0.5rem;
+    }
+
+    .navbar.navbar-float .nav-link {
+        justify-content: center;
+    }
+}
+
+.navbar.navbar-float {
+    z-index: 1030;
+    /* sticky top siempre arriba */
+}
+
+/* Asegura que el icono del toggler SIEMPRE se vea */
+.navbar.navbar-float .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.navbar.navbar-float .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@include bp.down(bp.$bp-sm) {
+
+    .navbar.navbar-float>.container,
+    .navbar.navbar-float>.container-fluid {
+        width: calc(100% - 1rem);
+        padding: .6rem .75rem;
+        border-radius: 16px;
+    }
+}
