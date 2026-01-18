@@ -1,8 +1,9 @@
 @charset "UTF-8";
+
 /* Fuentes */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
-/* Acepta 1 o varias transiciones */
+/* Tipografía de marca */
 @font-face {
   font-family: "Cratense";
   src: url("../assets/Cratense.ttf") format("truetype");
@@ -10,7 +11,9 @@
   font-style: normal;
 }
 
-/* Global */
+/* =========================================================
+   Global
+   ========================================================= */
 html,
 body {
   overflow-x: hidden;
@@ -21,7 +24,7 @@ body {
   background-color: #f8f9fa;
 }
 
-/* ✅ Tipografía marca: headings + displays de Bootstrap */
+/* Tipografía marca: headings + displays de Bootstrap */
 h1,
 h2,
 h3,
@@ -35,6 +38,7 @@ h3,
   font-family: "Cratense", serif;
 }
 
+/* Link “Ver menú completo →” */
 a.link-febite {
   display: inline-flex;
   align-items: center;
@@ -60,20 +64,21 @@ a.link-febite:focus-visible {
   outline-offset: 3px;
 }
 
-/* sass/abstracts/_breakpoints.scss */
-/* Navbar flotante */
+/* =========================================================
+   Navbar flotante
+   ========================================================= */
 .navbar.navbar-float {
   background: transparent;
-  /* el fondo lo tendrá el contenedor interno */
   box-shadow: none;
   padding: 1rem 0;
-  /* aire arriba/abajo */
+  z-index: 1030;
+  /* sticky-top siempre arriba */
 }
 
+/* El “bloque flotante” */
 .navbar.navbar-float>.container,
 .navbar.navbar-float>.container-fluid {
   width: min(1320px, 100% - 2rem);
-  /* MÁS GRANDE */
   margin-inline: auto;
   padding: 0.75rem 1rem;
   background: rgba(249, 226, 197, 0.78);
@@ -113,11 +118,16 @@ a.link-febite:focus-visible {
 
 /* Toggler (mobile) */
 .navbar.navbar-float .navbar-toggler {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
 
-/* Cuando el menú colapsa, que se vea ordenado */
+/* Asegura que el icono del toggler se vea */
+.navbar.navbar-float .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Collapse styling */
 @media (max-width: 991.98px) {
   .navbar.navbar-float .navbar-collapse {
     margin-top: 0.75rem;
@@ -135,20 +145,6 @@ a.link-febite:focus-visible {
   }
 }
 
-.navbar.navbar-float {
-  z-index: 1030;
-  /* sticky top siempre arriba */
-}
-
-/* Asegura que el icono del toggler SIEMPRE se vea */
-.navbar.navbar-float .navbar-toggler {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.navbar.navbar-float .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
 @media (max-width: 575.98px) {
 
   .navbar.navbar-float>.container,
@@ -159,13 +155,15 @@ a.link-febite:focus-visible {
   }
 }
 
-/* --- ESTILOS DEL FOOTER AVANZADO --- */
+/* =========================================================
+   Footer
+   ========================================================= */
 .footer-febite {
+  background-color: #0b1a30;
   color: #ffffff;
   padding-top: 3rem;
   padding-bottom: 1.5rem;
   margin-top: auto;
-  /* Títulos de las columnas del footer */
 }
 
 .footer-febite h5 {
@@ -175,39 +173,6 @@ a.link-febite:focus-visible {
   font-size: 1.2rem;
 }
 
-.footer-febite {
-  /* Enlaces del footer */
-}
-
-.footer-febite ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-febite a {
-  color: #d1d1d1;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-febite a:hover {
-  color: #f4511e;
-  padding-left: 5px;
-  background-color: #0b1a30;
-  color: #ffffff;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
-  margin-top: auto;
-}
-
-/* Títulos de las columnas del footer */
-.footer-febite h5 {
-  font-family: 'Cratense', serif;
-  color: #f9e2c5;
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-}
-
-/* Enlaces del footer */
 .footer-febite ul li {
   margin-bottom: 0.5rem;
 }
@@ -223,10 +188,10 @@ a.link-febite:focus-visible {
   padding-left: 5px;
 }
 
-/* Iconos de redes sociales */
+/* Iconos redes */
 .social-icon {
   filter: brightness(0) invert(1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   opacity: 0.8;
 }
 
@@ -235,6 +200,7 @@ a.link-febite:focus-visible {
   opacity: 1;
 }
 
+/* Copyright */
 .copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 2rem;
@@ -243,6 +209,9 @@ a.link-febite:focus-visible {
   color: #8899a6;
 }
 
+/* =========================================================
+   Botones
+   ========================================================= */
 .btn-primary-febite {
   background-color: #f4511e;
   color: white;
@@ -294,7 +263,6 @@ a.link-febite:focus-visible {
   font-weight: 800;
   text-decoration: none;
   background: #198754;
-  /* Bootstrap success */
   color: #fff;
   border: none;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
@@ -307,6 +275,9 @@ a.link-febite:focus-visible {
   color: #fff;
 }
 
+/* =========================================================
+   Cards
+   ========================================================= */
 .card {
   border: none;
   background-color: #fff;
@@ -344,28 +315,17 @@ a.link-febite:focus-visible {
   font-weight: 800;
 }
 
-.info-card {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 18px;
-  padding: 1.25rem;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
-}
-
-.info-card ul {
-  padding-left: 1.1rem;
-  margin-bottom: 0;
-}
-
-.info-card li {
-  margin-bottom: 0.4rem;
-}
-
+/* =========================================================
+   Hero (home)
+   ========================================================= */
 .hero-febite {
   position: relative;
   border-radius: 18px;
   overflow: visible;
-  background: radial-gradient(900px 320px at 20% 0%, rgba(244, 81, 30, 0.18), transparent 55%), radial-gradient(700px 320px at 85% 20%, rgba(249, 226, 197, 0.85), transparent 60%), linear-gradient(180deg, #ffffff, #f8f9fa);
+  background:
+    radial-gradient(900px 320px at 20% 0%, rgba(244, 81, 30, 0.18), transparent 55%),
+    radial-gradient(700px 320px at 85% 20%, rgba(249, 226, 197, 0.85), transparent 60%),
+    linear-gradient(180deg, #ffffff, #f8f9fa);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -437,6 +397,9 @@ a.link-febite:focus-visible {
   }
 }
 
+/* =========================================================
+   Section heads
+   ========================================================= */
 .section-head {
   margin-bottom: 1rem;
 }
@@ -449,10 +412,21 @@ a.link-febite:focus-visible {
   flex-wrap: wrap;
 }
 
+.section-head .display-6 {
+  font-size: clamp(1.65rem, 5.5vw, 2.25rem);
+  line-height: 1.1;
+}
+
+/* =========================================================
+   Page hero (pages internas)
+   ========================================================= */
 .page-hero {
   border-radius: 18px;
   overflow: visible;
-  background: radial-gradient(900px 320px at 20% 0%, rgba(244, 81, 30, 0.18), transparent 55%), radial-gradient(700px 320px at 85% 20%, rgba(249, 226, 197, 0.85), transparent 60%), linear-gradient(180deg, #ffffff, #f8f9fa);
+  background:
+    radial-gradient(900px 320px at 20% 0%, rgba(244, 81, 30, 0.18), transparent 55%),
+    radial-gradient(700px 320px at 85% 20%, rgba(249, 226, 197, 0.85), transparent 60%),
+    linear-gradient(180deg, #ffffff, #f8f9fa);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   padding: clamp(1.25rem, 2vw, 2rem);
 }
@@ -465,11 +439,6 @@ a.link-febite:focus-visible {
 .page-hero .display-5 {
   font-size: clamp(1.9rem, 6.5vw, 3rem);
   line-height: 1.05;
-}
-
-.section-head .display-6 {
-  font-size: clamp(1.65rem, 5.5vw, 2.25rem);
-  line-height: 1.1;
 }
 
 @media (max-width: 575.98px) {
@@ -497,7 +466,7 @@ a.link-febite:focus-visible {
   display: block;
 }
 
-/* Da aire a la sección que viene después del hero aunque uses pb-* */
+/* Aire a la sección siguiente */
 .page-hero+section {
   padding-top: 3rem;
 }
@@ -508,6 +477,9 @@ a.link-febite:focus-visible {
   }
 }
 
+/* =========================================================
+   Mini info (pedidos/reservas)
+   ========================================================= */
 .mini-info {
   display: grid;
   grid-template-columns: 1fr;
@@ -540,6 +512,9 @@ a.link-febite:focus-visible {
   color: #222;
 }
 
+/* =========================================================
+   Step / FAQ / CTA
+   ========================================================= */
 .step-card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -589,6 +564,9 @@ a.link-febite:focus-visible {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
 }
 
+/* =========================================================
+   Menu sections (hamburguesas / perros)
+   ========================================================= */
 .menu-section {
   scroll-margin-top: 110px;
 }
@@ -605,8 +583,9 @@ a.link-febite:focus-visible {
   margin: 0 0 1.5rem;
 }
 
-/* Pedidos: estilos 100% compartidos están en components/_sections.scss */
-/* Reservas: estilos compartidos en components/_sections.scss */
+/* =========================================================
+   Forms
+   ========================================================= */
 .form-card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -631,7 +610,9 @@ a.link-febite:focus-visible {
   box-shadow: 0 0 0 0.25rem rgba(244, 81, 30, 0.12);
 }
 
-/* Nosotros: secciones compartidas en components/_sections.scss */
+/* =========================================================
+   Nosotros
+   ========================================================= */
 .quote-card {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -682,20 +663,4 @@ a.link-febite:focus-visible {
 .feature-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
-  =======filter: brightness(0) invert(1);
-  transition: transform 0.3s;
-  opacity: 0.8;
-}
-
-.social-icon:hover {
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-.copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  font-size: 0.9rem;
-  color: #8899a6;
 }
