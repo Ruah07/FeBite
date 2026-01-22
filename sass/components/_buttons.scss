@@ -20,7 +20,6 @@
   }
 }
 
-/* Variantes generadas con @each (mantiene tus mismas clases del HTML) */
 $btn-variants: (
   "primary-febite": (bg: v.$brand,
     bg-hover: v.$brand-hover,
@@ -46,7 +45,6 @@ $btn-variants: (
   }
 }
 
-/* Ghost (tu clase actual) */
 .btn--ghost {
   @extend %btn-base;
   background: rgba(255, 255, 255, 0.75);

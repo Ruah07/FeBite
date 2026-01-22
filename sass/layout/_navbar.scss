@@ -3,13 +3,10 @@
 @use "../abstracts/breakpoints" as bp;
 
 
-/* Navbar flotante */
 .navbar.navbar-float {
     background: transparent;
-    /* el fondo lo tendrá el contenedor interno */
     box-shadow: none;
     padding: 1rem 0;
-    /* aire arriba/abajo */
 }
 
 .navbar.navbar-float>.container,
@@ -28,14 +25,11 @@
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
 }
 
-
-/* Marca */
 .navbar.navbar-float .navbar-brand {
     font-size: 1.6rem;
     color: v.$text-dark !important;
 }
 
-/* Links */
 .navbar.navbar-float .nav-link {
     color: v.$text-nav !important;
     font-weight: 600;
@@ -56,13 +50,11 @@
     }
 }
 
-/* Toggler (mobile) */
 .navbar.navbar-float .navbar-toggler {
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 12px;
 }
 
-/* Cuando el menú colapsa, que se vea ordenado */
 @media (max-width: 991.98px) {
     .navbar.navbar-float .navbar-collapse {
         margin-top: 0.75rem;
@@ -82,10 +74,8 @@
 
 .navbar.navbar-float {
     z-index: 1030;
-    /* sticky top siempre arriba */
 }
 
-/* Asegura que el icono del toggler SIEMPRE se vea */
 .navbar.navbar-float .navbar-toggler {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
