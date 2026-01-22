@@ -1,0 +1,135 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as bp;
+
+
+.hero-febite {
+    @include m.hero-surface(22px);
+
+    padding: 2rem 1.25rem;
+    margin-top: 1.25rem;
+
+    .hero-febite__title {
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-febite__lead {
+        max-width: 60ch;
+    }
+
+    .hero-febite__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+    }
+
+    .hero-febite__bullets {
+        display: grid;
+        gap: 0.5rem;
+        padding-left: 1.25rem;
+
+        li {
+            color: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    .hero-febite__media {
+        display: grid;
+        place-items: center;
+
+        .hero-febite__img {
+            width: 100%;
+            height: auto;
+            max-width: 560px;
+            display: block;
+        }
+    }
+}
+
+@media (min-width: bp.$bp-md) {
+    .hero-febite {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: bp.$bp-sm) {
+    .hero-febite {
+        padding: 1.5rem 1rem;
+    }
+}
+
+#menu {
+    /* Tu contenedor suele verse así en HTML:
+     <div class="row row-cols-1 row-cols-md-3 g-4"> ... */
+
+    .row.row-cols-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+
+
+        >.col {
+            width: auto;
+            max-width: none;
+            flex: initial;
+        }
+    }
+
+    @media (min-width: bp.$bp-md) {
+        .row.row-cols-1 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: bp.$bp-lg) {
+        .row.row-cols-1 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    .link-febite {
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.menu-section {
+    .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+
+        >.col {
+            width: auto;
+            max-width: none;
+            flex: initial;
+        }
+    }
+
+    @media (min-width: bp.$bp-md) {
+        .row {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: bp.$bp-lg) {
+        .row {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: bp.$bp-sm) {
+
+    #menu h2,
+    .menu-section h2 {
+        text-wrap: balance;
+    }
+}

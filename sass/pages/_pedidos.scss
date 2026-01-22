@@ -1,1 +1,21 @@
-/* Pedidos: estilos 100% compartidos están en components/_sections.scss */
+@use "../abstracts/breakpoints" as bp;
+
+.page-hero[aria-labelledby="pedidos-title"] {
+    .page-hero__media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 520px;
+        margin-inline: auto;
+    }
+
+    .mini-info {
+        gap: 0.75rem;
+    }
+
+    @include bp.up(bp.$bp-md) {
+        .mini-info {
+            gap: 1rem;
+        }
+    }
+}
